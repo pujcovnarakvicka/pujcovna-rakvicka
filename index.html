@@ -10,108 +10,76 @@
       margin: 0;
       background-color: #f7f7f7;
       color: #333;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
     }
-    header {
-      background-color: #ffffff;
+    .coming-soon {
+      max-width: 600px;
       padding: 20px;
-      text-align: center;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
-    header h1 {
-      margin: 0;
+    .coming-soon h1 {
+      font-size: 2em;
+      margin-bottom: 15px;
     }
-    .intro {
-      text-align: center;
-      padding: 30px 15px;
-      max-width: 800px;
-      margin: auto;
+    .coming-soon p {
+      font-size: 1.1em;
+      color: #666;
     }
-    .products {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-      padding: 40px;
-      max-width: 1200px;
-      margin: auto;
-    }
-    .product {
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      overflow: hidden;
-      text-align: center;
-      padding-bottom: 20px;
-    }
-    .product img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-    }
-    .product h3 {
-      margin: 15px 0 10px;
-    }
-    .product p {
-      padding: 0 10px;
-      font-size: 0.95rem;
-    }
-    .product a {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 10px 20px;
-      background-color: #333;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      transition: background 0.3s;
-    }
-    .product a:hover {
-      background-color: #555;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background-color: #f0f0f0;
-      font-size: 0.9rem;
+
+    /* Skrytí původního obsahu */
+    .hidden {
+      display: none;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Půjčovna Rakvička</h1>
-    <p>Specialista na střešní boxy a nosiče kol</p>
-  </header>
+  <div class="coming-soon">
+    <h1>Na vytváření webu stále pracujeme</h1>
+    <p>Děkujeme za trpělivost. Již brzy zde najdete kompletní nabídku naší půjčovny.</p>
+  </div>
 
-  <section class="intro">
-    <p>Jsme profesionální půjčovna příslušenství k autům se specializací na střešní boxy a nosiče kol. Nabízíme kvalitní vybavení pro vaše cesty. Podívejte se na naši nabídku a kontaktujte nás!</p>
-  </section>
+  <!-- Původní obsah stránky – aktuálně skrytý -->
+  <div class="hidden">
+    <header>
+      <h1>Půjčovna Rakvička</h1>
+      <p>Specialista na střešní boxy a nosiče kol</p>
+    </header>
 
-  <section class="products">
-    <div class="product">
-      <img src="images/box1.jpg" alt="Produkt 1">
-      <h3>Upřesňujeme produkty</h3>
-      <p>Velký objem, elegantní design a snadná montáž. Ideální pro rodinné výlety.</p>
-      <a href="#kontakt">Kontaktovat</a>
-    </div>
-    <div class="product">
-      <img src="images/nosic1.jpg" alt="Produkt 2">
-      <h3>Nosič kol na tažné zařízení</h3>
-      <p>Univerzální nosič až pro 3 kola s rychlým upínáním a sklápěním.</p>
-      <a href="#kontakt">Kontaktovat</a>
-    </div>
-  </section>
+    <section class="intro">
+      <p>Jsme profesionální půjčovna příslušenství k autům se specializací na střešní boxy a nosiče kol. Nabízíme kvalitní vybavení pro vaše cesty. Podívejte se na naši nabídku a kontaktujte nás!</p>
+    </section>
 
-  <section id="kontakt" class="intro">
-    <h2>Kontaktní formulář</h2>
-    <form action="#" method="post">
-      <p><input type="text" name="jmeno" placeholder="Vaše jméno" required style="width: 100%; padding: 10px; margin-bottom: 10px;"></p>
-      <p><input type="email" name="email" placeholder="Váš e-mail" required style="width: 100%; padding: 10px; margin-bottom: 10px;"></p>
-      <p><textarea name="zprava" rows="5" placeholder="Vaše zpráva" required style="width: 100%; padding: 10px;"></textarea></p>
-      <p><button type="submit" style="padding: 10px 20px; background-color: #333; color: white; border: none; border-radius: 5px;">Odeslat</button></p>
-    </form>
-  </section>
+    <section class="products">
+      <div class="product">
+        <img src="images/box1.jpg" alt="Produkt 1">
+        <h3>Upřesňujeme produkty</h3>
+        <p>Velký objem, elegantní design a snadná montáž. Ideální pro rodinné výlety.</p>
+        <a href="#kontakt">Kontaktovat</a>
+      </div>
+      <div class="product">
+        <img src="images/nosic1.jpg" alt="Produkt 2">
+        <h3>Nosič kol na tažné zařízení</h3>
+        <p>Univerzální nosič až pro 3 kola s rychlým upínáním a sklápěním.</p>
+        <a href="#kontakt">Kontaktovat</a>
+      </div>
+    </section>
 
-  <footer>
-    &copy; 2025 Půjčovna Rakvička. Všechna práva vyhrazena.
-  </footer>
+    <section id="kontakt" class="intro">
+      <h2>Kontaktní formulář</h2>
+      <form action="#" method="post">
+        <p><input type="text" name="jmeno" placeholder="Vaše jméno" required style="width: 100%; padding: 10px; margin-bottom: 10px;"></p>
+        <p><input type="email" name="email" placeholder="Váš e-mail" required style="width: 100%; padding: 10px; margin-bottom: 10px;"></p>
+        <p><textarea name="zprava" rows="5" placeholder="Vaše zpráva" required style="width: 100%; padding: 10px;"></textarea></p>
+        <p><button type="submit" style="padding: 10px 20px; background-color: #333; color: white; border: none; border-radius: 5px;">Odeslat</button></p>
+      </form>
+    </section>
+
+    <footer>
+      &copy; 2025 Půjčovna Rakvička. Všechna práva vyhrazena.
+    </footer>
+  </div>
 </body>
 </html>
