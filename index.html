@@ -1,85 +1,293 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Půjčovna Rakvička</title>
   <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    * { box-sizing: border-box; }
+    html, body {
       margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: #f7f7f7;
       color: #333;
+      height: 100%;
+    }
+    body {
       display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      text-align: center;
+      flex-direction: column;
+      min-height: 100vh;
     }
-    .coming-soon {
-      max-width: 600px;
+    main { flex: 1; }
+
+    header {
+      background-color: #fff;
       padding: 20px;
-    }
-    .coming-soon h1 {
-      font-size: 2em;
-      margin-bottom: 15px;
-    }
-    .coming-soon p {
-      font-size: 1.1em;
-      color: #666;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
 
-    /* Skrytí původního obsahu */
-    .hidden {
-      display: none;
+    .header-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .logo {
+      position: absolute;
+      right: 20px;
+      top: 10px;
+    }
+
+    .logo img {
+      height: 120px;
+      object-fit: contain;
+    }
+
+    .intro {
+      text-align: center;
+      padding: 30px 15px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
+      align-items: stretch;
+    }
+
+    .product {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      overflow: hidden;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .product img {
+      width: auto;
+      height: 180px;
+      object-fit: contain;
+      margin: 0 auto;
+    }
+
+    .product h3 {
+      margin: 15px 0 10px;
+    }
+
+    .product p {
+      padding: 0 15px;
+      font-size: 0.95rem;
+    }
+
+    .product a {
+      margin-top: auto;
+      margin-bottom: 20px;
+      padding: 10px 20px;
+      background-color: #333;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background 0.3s;
+      align-self: center;
+    }
+
+    .product a:hover {
+      background-color: #555;
+    }
+
+    .form-section {
+      background-color: #fff;
+      padding: 40px 20px;
+      max-width: 800px;
+      margin: 40px auto;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      border-radius: 8px;
+    }
+
+    .form-section h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+
+    form button {
+      padding: 12px 20px;
+      background-color: #333;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    form button:hover {
+      background-color: #555;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #f0f0f0;
+      font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
-  <div class="coming-soon">
-    <h1>Na vytváření webu stále pracujeme</h1>
-    <p>Děkujeme za trpělivost. Již brzy zde najdete kompletní nabídku naší půjčovny.</p>
-  </div>
 
-  <!-- Původní obsah stránky – aktuálně skrytý -->
-  <div class="hidden">
-    <header>
+<header>
+  <div class="header-content">
+    <div class="text">
       <h1>Půjčovna Rakvička</h1>
       <p>Specialista na střešní boxy a nosiče kol</p>
-    </header>
-
-    <section class="intro">
-      <p>Jsme profesionální půjčovna příslušenství k autům se specializací na střešní boxy a nosiče kol. Nabízíme kvalitní vybavení pro vaše cesty. Podívejte se na naši nabídku a kontaktujte nás!</p>
-    </section>
-
-    <section class="products">
-      <div class="product">
-        <img src="images/box1.jpg" alt="Produkt 1">
-        <h3>Upřesňujeme produkty</h3>
-        <p>Velký objem, elegantní design a snadná montáž. Ideální pro rodinné výlety.</p>
-        <a href="#kontakt">Kontaktovat</a>
-      </div>
-      <div class="product">
-        <img src="images/nosic1.jpg" alt="Produkt 2">
-        <h3>Nosič kol na tažné zařízení</h3>
-        <p>Univerzální nosič až pro 3 kola s rychlým upínáním a sklápěním.</p>
-        <a href="#kontakt">Kontaktovat</a>
-      </div>
-    </section>
-
-    <section id="kontakt" class="intro">
-      <h2>Kontaktní formulář</h2>
-      <form action="#" method="post">
-        <p><input type="text" name="jmeno" placeholder="Vaše jméno" required style="width: 100%; padding: 10px; margin-bottom: 10px;"></p>
-        <p><input type="email" name="email" placeholder="Váš e-mail" required style="width: 100%; padding: 10px; margin-bottom: 10px;"></p>
-        <p><textarea name="zprava" rows="5" placeholder="Vaše zpráva" required style="width: 100%; padding: 10px;"></textarea></p>
-        <p><button type="submit" style="padding: 10px 20px; background-color: #333; color: white; border: none; border-radius: 5px;">Odeslat</button></p>
-      </form>
-    </section>
-
-    <footer>
-      &copy; 2025 Půjčovna Rakvička. Všechna práva vyhrazena.
-    </footer>
+    </div>
+    <div class="logo">
+      <img src="images/logo.png" alt="Logo">
+    </div>
   </div>
+</header>
+
+<main>
+  <section class="intro">
+    <p>Nabízíme kvalitní střešní boxy, nosiče kol a další vybavení pro pohodlné cestování autem. Vše jednoduše, rychle a za férové ceny.</p>
+  </section>
+
+  <section class="products">
+    <div class="product">
+      <img src="images/hapro 500.jpg" alt="Střešní box 500l">
+      <h3>Střešní box HAPRO EXPLORER 500</h3>
+      <div style="text-align: left; padding: 0 15px; font-size: 0.95rem;">
+        <p><strong>Box na střechu Hapro Explorer 500</strong></p>
+        <ul style="padding-left: 20px; margin-top: 0;">
+          <li>Rozměry: 215 x 90 x 42 cm</li>
+          <li>Objem 525 litrů</li>
+          <li>Oboustranné otevírání</li>
+          <li>Maximální zátěž až 75 kg</li>
+          <li>Aerodynamický tvar = nízká hlučnost i odpor vzduchu</li>
+          <li>Počet lyží/snowboardů: 7/4 (vhodný pro lyže do 208 cm!)</li>
+          <li>Vhodný i pro převoz dětského kola či kočárku</li>
+          <li>Atest – schválený k provozu</li>
+        </ul>
+        <p><strong>Ceník pronájmu:</strong></p>
+        <ul style="padding-left: 20px; margin-top: 0;">
+          <li>1–9 dní: 189 Kč / den</li>
+          <li>10–19 dní: 179 Kč / den</li>
+          <li>20+ dní: 169 Kč / den</li>
+          <li><strong>AKCE:</strong> Víkend (Pá–Po) pouze za 567 Kč</li>
+          <li>Kauce: 8000 Kč</li>
+        </ul>
+      </div>
+      <a href="#kontakt">Mám zájem</a>
+    </div>
+
+    <div class="product">
+      <img src="images/hapro400.jpg" alt="Střešní box 400l">
+      <h3>Střešní box HAPRO EXPLORER 400</h3>
+      <div style="text-align: left; padding: 0 15px; font-size: 0.95rem;">
+        <p><strong>Box na střechu Hapro Explorer 400</strong></p>
+        <ul style="padding-left: 20px; margin-top: 0;">
+          <li>Rozměry: 192 x 82 x 42cm</li>
+          <li>Objem 421 litrů</li>
+          <li>Oboustranné otevírání</li>
+          <li>Maximální zátěž až 75 kg</li>
+          <li>Aerodynamický tvar = nízká hlučnost i odpor vzduchu</li>
+          <li>Počet lyží/snowboardů - 6/4 (vhodný pro lyže do 185 cm)</li>
+          <li>Atest – schválený k provozu</li>
+        </ul>
+        <p><strong>Ceník pronájmu:</strong></p>
+        <ul style="padding-left: 20px; margin-top: 0;">
+          <li>1–9 dní: 189 Kč / den</li>
+          <li>10–19 dní: 179 Kč / den</li>
+          <li>20+ dní: 169 Kč / den</li>
+          <li><strong>AKCE:</strong> Víkend (Pá–Po) pouze za 567 Kč</li>
+          <li>Kauce: 5000 Kč</li>
+        </ul>
+      </div>
+      <a href="#kontakt">Mám zájem</a>
+    </div>
+
+    <!-- Zbytek produktů beze změn, pouze s vycentrovanými obrázky a zarovnaným tlačítkem -->
+    <div class="product">
+      <img src="images/hakr320.jpg" alt="Nosič kol 2 kola">
+      <h3>Nosič kol na 2 kola</h3>
+      <p>Bude doplněno</p>
+      <a href="#kontakt">Mám zájem</a>
+    </div>
+    <div class="product">
+      <img src="images/atera3.jpg" alt="Nosič kol 3 kola">
+      <h3>Nosič kol na 3 kola</h3>
+      <p>Bude doplněno</p>
+      <a href="#kontakt">Mám zájem</a>
+    </div>
+    <div class="product">
+      <img src="images/atera2.jpg" alt="Držák lyží">
+      <h3>Držák lyží</h3>
+      <p>Bude doplněno</p>
+      <a href="#kontakt">Mám zájem</a>
+    </div>
+    <div class="product">
+      <img src="images/kolostrecha.jpg" alt="Box Thule Touring">
+      <h3>Thule Touring Sport</h3>
+      <p>Bude doplněno.</p>
+      <a href="#kontakt">Mám zájem</a>
+    </div>
+    <div class="product">
+      <img src="images/135.jpg" alt="Příčníky">
+      <h3>Střešní nosiče</h3>
+      <p>Bude doplněno</p>
+      <a href="#kontakt">Mám zájem</a>
+    </div>
+    <div class="product">
+      <img src="images/120.jpg" alt="Box na lyže">
+      <h3>Box na lyže XL</h3>
+      <p>Bude doplněno.</p>
+      <a href="#kontakt">Mám zájem</a>
+    </div>
+  </section>
+
+  <section id="kontakt" class="form-section">
+    <h2>Kontaktní formulář</h2>
+    <p style="text-align: center; font-size: 1.1rem;">Kontaktujte nás níže pomocí jednoduchého formuláře:</p>
+    <div style="text-align: center; margin-top: 20px;">
+      <a href="https://docs.google.com/forms/d/1SGir9n-yC-uZC5j_GDXOXfehIQk7BDpz8NRZAd0ol7g/viewform" 
+         target="_blank" 
+         style="display: inline-block; padding: 12px 25px; background-color: #333; color: #fff; text-decoration: none; border-radius: 5px; font-size: 1rem;">
+        Klikněte ZDE
+      </a>
+    </div>
+  </section>
+</main>
+
+<section class="download-section" style="text-align: center; padding: 30px 15px;">
+  <p>Zde naleznete půjčovní řád:</p>
+  <a href="pujcovnirad.pdf" download style="font-weight: bold; color: #007BFF; text-decoration: underline;">
+    Stáhnout půjčovní řád zde
+  </a>
+</section>
+
+<footer>
+  &copy; Provozovatelem půjčovny Rakvička je společnost L&K Progress s.r.o. IČ 23420251, 2025 Půjčovna Rakvička. Všechna práva vyhrazena.
+</footer>
+
 </body>
 </html>
