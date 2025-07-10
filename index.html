@@ -402,6 +402,20 @@
 <footer>
   &copy; Provozovatelem půjčovny Rakvička je společnost L&K Progress s.r.o. IČ 23420251, 2025 Půjčovna Rakvička. Všechna práva vyhrazena.
 </footer>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Vyber všechny odkazy s textem "Mám zájem"
+    const buttons = document.querySelectorAll('.product a');
 
+    buttons.forEach(button => {
+      button.addEventListener('click', event => {
+        event.preventDefault(); // Zabrání přechodu na odkaz
+        alert(
+          'Skvělé, kontaktujte nás pomocí kontaktního formuláře níže, instagramu @pujčovnarakvicka, nebo nám napište na email: pujcovnarakvicka@post.cz\n\nObratem se vám ozveme a do několika hodin můžete začít vybraný produkt užívat!'
+        );
+      });
+    });
+  });
+</script>
 </body>
 </html>
