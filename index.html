@@ -169,7 +169,19 @@
   display: block;
   min-height: 180px;
 }
+@media (max-width: 600px) {
+  .header-content {
+    flex-direction: column;
+    align-items: center;
+  }
 
+  .logo {
+    position: static;
+    margin-top: 15px;
+    right: auto;
+    top: auto;
+  }
+}
   </style>
 </head>
 <body>
