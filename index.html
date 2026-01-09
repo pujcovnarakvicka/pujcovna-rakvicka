@@ -256,17 +256,48 @@
 
   </section>
 
-  <!-- Formulář Formspree -->
+<!-- Formulář Formspree -->
   <section id="rezervace" class="form-section">
     <h2>Rezervace / Kontaktní formulář</h2>
-    <form action="https://formspree.io/f/mojjavdg" method="POST">
+    <form id="reservationForm" action="https://formspree.io/f/mojjavdg" method="POST">
       <input type="text" name="name" placeholder="Vaše jméno" required>
       <input type="email" name="email" placeholder="Váš email" required>
       <input type="tel" name="phone" placeholder="Telefon" required>
-      <textarea name="message" placeholder="Vaše zpráva / vybraný produkt" rows="4" required></textarea>
+
+      <!-- Výběr produktu -->
+      <select name="product" required>
+        <option value="" disabled selected>Vyberte produkt</option>
+        <option>Střešní box 500L</option>
+        <option>Střešní box 400L</option>
+        <option>Střešní box 320L</option>
+        <option>Nosič 4 Kol na tažné</option>
+        <option>Nosič 3 Kol na tažné</option>
+        <option>Nosič kol na Střechu</option>
+        <option>Střešní nosiče 135cm</option>
+        <option>Střešní nosiče 120cm</option>
+      </select>
+
+      <!-- Datum a čas začátku a konce -->
+      <label>Začátek půjčení:</label>
+      <input type="datetime-local" name="start_date" required>
+      <label>Konec půjčení:</label>
+      <input type="datetime-local" name="end_date" required>
+
+      <!-- Místo vyzvednutí -->
+      <select name="pickup_location" required>
+        <option value="" disabled selected>Vyberte místo vyzvednutí</option>
+        <option>Kováry, Zákolany</option>
+        <option>Hostivice u Prahy</option>
+        <option>Dolní Břežany</option>
+        <option>Doprava domů / dle dohody</option>
+      </select>
+
+      <textarea name="message" placeholder="Vaše zpráva" rows="4"></textarea>
       <button type="submit">Odeslat rezervaci</button>
+      <div class="thank-you">Děkujeme za odeslání, vyčkejte prosím na potvrzení rezervace!</div>
     </form>
   </section>
+
 
 </main>
 
