@@ -49,6 +49,22 @@
       .header-content { flex-direction:column; align-items:center; }
       .logo { position:static; margin-top:15px; right:auto; top:auto; }
     }
+    /* Zvýraznění a zvětšení select boxů ve formuláři */
+form select {
+  width: 100%;
+  padding: 16px 12px;   /* větší padding */
+  font-size: 1.1rem;    /* větší písmo */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  background-color: #fff;
+  appearance: none;      /* odstraní výchozí šipku pro lepší vzhled */
+  cursor: pointer;
+}
+
+form select:focus {
+  outline: 2px solid #333;
+}
   </style>
 </head>
 <body>
