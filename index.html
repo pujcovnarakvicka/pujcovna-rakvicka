@@ -414,6 +414,17 @@ form select:focus {
     </button>
   </div>
 </div>
+<script>
+  function closePopup() {
+    const popup = document.getElementById('welcomePopup');
+    if (popup) popup.style.display = 'none';
+  }
+
+  window.addEventListener('load', () => {
+    const popup = document.getElementById('welcomePopup');
+    if (popup) popup.style.display = 'flex';
+  });
+</script>
 
 </body>
 </html>
