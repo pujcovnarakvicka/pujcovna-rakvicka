@@ -308,7 +308,16 @@ form select:focus {
         <option>Doprava domů / dle dohody</option>
       </select>
 
-      <textarea name="message" placeholder="Vaše zpráva" rows="4"></textarea>
+          <!-- Místo vrácení -->
+      <select name="dropoff_location" required>
+        <option value="" disabled selected>Vyberte místo vrácení</option>
+        <option>Kováry, Zákolany</option>
+        <option>Hostivice u Prahy</option>
+        <option>Dolní Břežany</option>
+        <option>Doprava domů / dle dohody</option>
+      </select>
+
+      <textarea name="message" placeholder="Chcete nám ještě něco sdělit?" rows="4"></textarea>
       <button type="submit">Odeslat rezervaci</button>
       <div class="thank-you">Děkujeme za odeslání poptávky, vyčkejte prosím na potvrzení rezervace! Upozorňujeme, že bez potvrzení není vaše rezervace platná. Potřebujete řešit ihned? Volejte na 777 851 101 nebo 731 686 863. </div>
     </form>
