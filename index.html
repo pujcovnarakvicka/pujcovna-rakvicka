@@ -417,11 +417,11 @@ form select:focus {
 <script>
   function closePopup() {
     document.getElementById('welcomePopup').style.display = 'none';
-    localStorage.setItem('popupSeen', 'true');
+   
   }
 
   window.addEventListener('load', function () {
-    if (localStorage.getItem('popupSeen') === 'true') {
+    {
       document.getElementById('welcomePopup').style.display = 'none';
     }
   });
