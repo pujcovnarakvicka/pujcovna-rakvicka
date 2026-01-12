@@ -342,9 +342,9 @@ form select:focus {
         <option>Střešní box 320L</option>
         <option>Nosič 4 Kol na tažné</option>
         <option>Nosič 3 Kol na tažné</option>
-        <option>Nosič kol na Střechu</option>
-        <option>Střešní nosiče 135cm</option>
-        <option>Střešní nosiče 120cm</option>
+        <option>Nosič kol na střechu</option>
+        <option>Univerzální střešní nosiče 135cm</option>
+        <option>Univerzální střešní nosiče 120cm</option>
       </select>
 
       <!-- Datum a čas začátku a konce -->
@@ -416,16 +416,14 @@ form select:focus {
 </div>
 <script>
   function closePopup() {
-    document.getElementById('welcomePopup').style.display = 'none';
-   
+    document.getElementById('welcomeOverlay').style.display = 'none';
   }
 
   window.addEventListener('load', function () {
-    {
-      document.getElementById('welcomePopup').style.display = 'none';
-    }
+    document.getElementById('welcomeOverlay').style.display = 'flex';
   });
 </script>
+
 
   
 </body>
