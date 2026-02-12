@@ -1,24 +1,173 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-    <meta charset="UTF-8">
-    <title>Kde nás najdete</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kde nás najdete | Půjčovna Rakvička</title>
+  <meta name="description" content="Kontakty a místa vyzvednutí Půjčovna Rakvička.">
+
+  <!-- Google tag -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17331815183"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-17331815183');
+  </script>
+
+<style>
+    * { box-sizing: border-box; }
+    html, body { margin:0; padding:0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color:#f7f7f7; color:#333; min-height:100%; }
+    body::before { content:""; position:absolute; top:0; left:0; width:100%; height:100%; background-image:url('images/pozadi.png'); background-size:cover; background-position:center; opacity:0.3; z-index:-1; }
+    main { flex:1; }
+    header { background-color:#fff; padding:20px; box-shadow:0 2px 4px rgba(0,0,0,0.1); }
+    .header-content { display:flex; flex-direction:column; align-items:center; text-align:center; max-width:1200px; margin:0 auto; position:relative; }
+    .logo { position:absolute; right:20px; top:10px; }
+    .logo img { height:120px; object-fit:contain; }
+    .intro { text-align:center; padding:30px 15px; max-width:800px; margin:auto; }
+    .products { display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:20px; padding:40px 20px; max-width:1200px; margin:auto; align-items:stretch; }
+    .product { background:white; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.1); overflow:hidden; text-align:center; display:flex; flex-direction:column; height:100%; }
+    .product img { width:auto; height:180px; object-fit:contain; margin:0 auto; }
+    .product h3 { margin:15px 0 10px; }
+    .product p { padding:0 15px; font-size:0.95rem; }
+    .product a { margin-top:auto; margin-bottom:20px; padding:10px 20px; background-color:#333; color:white; text-decoration:none; border-radius:5px; transition:background 0.3s; align-self:center; }
+    .product a:hover { background-color:#555; }
+    .form-section { background-color:#fff; padding:40px 20px; max-width:800px; margin:40px auto; box-shadow:0 2px 6px rgba(0,0,0,0.05); border-radius:8px; }
+    .form-section h2 { text-align:center; margin-bottom:30px; }
+    form input, form textarea { width:100%; padding:12px; margin-bottom:15px; border:1px solid #ccc; border-radius:5px; font-size:1rem; }
+    form button { padding:12px 20px; background-color:#333; color:white; border:none; border-radius:5px; cursor:pointer; font-size:1rem; }
+    form button:hover { background-color:#555; }
+    footer { text-align:center; padding:20px; background-color:#f0f0f0; font-size:0.9rem; }
+
+    /* Úprava velikosti obrázků pro boxy 1 a 2 */
+    .products .product:nth-child(1) img,
+    .products .product:nth-child(2) img { max-width:90%; height:auto; margin:0 auto; display:block; min-height:180px; }
+    /* Silnější zmenšení pro box 3 */
+    .products .product:nth-child(3) img { max-width:75%; height:auto; margin:0 auto; display:block; min-height:180px; }
+
+    @media (max-width:600px) {
+      .header-content { flex-direction:column; align-items:center; }
+      .logo { position:static; margin-top:15px; right:auto; top:auto; }
+    }
+    /* Zvýraznění a zvětšení select boxů ve formuláři */
+form select {
+  width: 100%;
+  padding: 16px 12px;   /* větší padding */
+  font-size: 1.1rem;    /* větší písmo */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  background-color: #fff;
+  appearance: none;      /* odstraní výchozí šipku pro lepší vzhled */
+  cursor: pointer;
+}
+
+form select:focus {
+  outline: 2px solid #333;
+}
+    .popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.popup-box {
+  background: #fff;
+  padding: 25px 30px;
+  max-width: 400px;
+  width: 90%;
+  border-radius: 14px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+}
+
+.popup-box h2 {
+  margin-bottom: 10px;
+}
+
+.popup-box p {
+  margin-bottom: 20px;
+}
+
+.popup-btn {
+  padding: 14px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 10px;
+  border: none;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+}
+
+.popup-btn:hover {
+  opacity: 0.9;
+}
+
+.popup-close {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  border: none;
+  background: none;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+  </style>
 </head>
 <body>
 
 <div class="top-nav">
-    <a href="index.html">Úvod</a>
+    <a href="index.html">Hlavní stránka</a>
     <a href="o-nas.html">O nás</a>
     <a href="kde-nas-najdete.html">Kde nás najdete</a>
 </div>
 
-<div style="padding:40px;">
-    <h1>Kde nás najdete</h1>
-    <p>
-        Pracujeme na našem webu, kdykoliv nás kontaktujte nebo použijte objednávkový formulář na hlavní stránce :-)
-    </p>
-</div>
+<header>
+  <div class="header-content">
+    <div class="text">
+      <h1>Půjčovna střešních boxů a nosičů kol – Praha</h1>
+    </div>
+    <div class="logo">
+      <img src="images/logo.png" alt="Logo">
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="intro">
+  <h2>Kde nás najdete</h2>
+
+  <p><strong>Místa předání:</strong></p>
+
+  <ul style="list-style:none; padding:0;">
+    <li>📍 Kováry, Zákolany</li>
+    <li>📍 Hostivice u Prahy</li>
+    <li>📍 Dolní Břežany</li>
+    <li>🚗 Možnost dopravy domů / dle dohody</li>
+  </ul>
+
+  <p style="margin-top:20px;">
+    Pro přesnou adresu a domluvu předání nás kontaktujte telefonicky:
+  </p>
+
+  <h3>📞 777 851 101</h3>
+  <h3>📞 731 686 863</h3>
+
+</section>
+
+</main>
+
+<footer>
+  &copy; Provozovatelem půjčovny Rakvička je společnost L&K Progress s.r.o. IČ 23420251, 2025 Půjčovna Rakvička. Všechna práva vyhrazena.
+</footer>
 
 </body>
 </html>
