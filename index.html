@@ -39,6 +39,27 @@
     form button:hover { background-color:#555; }
     footer { text-align:center; padding:20px; background-color:#f0f0f0; font-size:0.9rem; }
 
+  .top-nav {
+    width: 100%;
+    background: #111;
+    padding: 10px 0;
+    text-align: center;
+    position: relative;
+    z-index: 999;
+}
+
+.top-nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 20px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.top-nav a:hover {
+    text-decoration: underline;
+}
+
     /* Úprava velikosti obrázků pro boxy 1 a 2 */
     .products .product:nth-child(1) img,
     .products .product:nth-child(2) img { max-width:90%; height:auto; margin:0 auto; display:block; min-height:180px; }
@@ -122,6 +143,11 @@ form select:focus {
   </style>
 </head>
 <body>
+<div class="top-nav">
+    <a href="index.html">Úvod</a>
+    <a href="o-nas.html">O nás</a>
+    <a href="kde-nas-najdete.html">Kde nás najdete</a>
+</div>
 
 <header>
   <div class="header-content">
